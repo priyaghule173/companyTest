@@ -28,7 +28,7 @@ $db_select = mysqli_select_db($dbc, 'test');
                 margin: 50px auto 0px;
                 color: white;
                 background: #5F9EA0;
-                text-align: center;
+               
                 border: 1px solid #B0C4DE;
                 border-bottom: none;
                 border-radius: 10px 10px 0px 0px;
@@ -108,10 +108,23 @@ $db_select = mysqli_select_db($dbc, 'test');
                 width: 100%;
                 border: 1px solid #ddd;
             }
-            .Container-fluid
+            .Container
             {
                 text-align: center;
             }
+            .div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
 
         </style>
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -122,13 +135,13 @@ $db_select = mysqli_select_db($dbc, 'test');
     </head>
 
     <body>
-        <div class="container-fluid">
+        <div class="container" style="
+    margin: 0px;
+">
             <!--    <form  method="POST" enctype="multipart/form-data">-->
             <form class="form-horizontal demo-form" enctype="multipart/form-data" name="dwemp" data-parsley-validate="" method="POST" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
 
-                <div class="header">
-                    <h2>Details of Employee </h2>
-                </div>
+                 <h1>Employee Information</h1>
                 <div class="col-md-12">
                     <div class="row">
                         <div class="form-group">
@@ -143,10 +156,12 @@ $db_select = mysqli_select_db($dbc, 'test');
                                 </select>
                             </div>
                        
-                            <div class="col-md-8">
+                            <div class="col-md-4">
                                 <input type="submit" id="Search" name="Search" value="Search"  class="btn btn-primary pull-right" >
                             </div>
                         </div>
+                        </div>
+                </div>
                         <?php
                         if (isset($_REQUEST['Search'])) {
 //print_r($_REQUEST);
@@ -242,8 +257,7 @@ $db_select = mysqli_select_db($dbc, 'test');
                         ?>
 
                         </form>
-                    </div>
-                </div>
+                    
         </div>
     </body>
 
